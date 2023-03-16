@@ -14,6 +14,9 @@
 		26C218CD29C338D40066A0D0 /* EigaMeisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C218CC29C338D40066A0D0 /* EigaMeisterTests.swift */; };
 		26C218D729C338D40066A0D0 /* EigaMeisterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C218D629C338D40066A0D0 /* EigaMeisterUITests.swift */; };
 		26C218D929C338D40066A0D0 /* EigaMeisterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C218D829C338D40066A0D0 /* EigaMeisterUITestsLaunchTests.swift */; };
+		26C218E629C339C10066A0D0 /* TMDbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C218E529C339C10066A0D0 /* TMDbAPI.swift */; };
+		26C218E829C339F10066A0D0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C218E729C339F10066A0D0 /* Movie.swift */; };
+		26C218EA29C33A0C0066A0D0 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C218E929C33A0C0066A0D0 /* MovieListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		26C218D229C338D40066A0D0 /* EigaMeisterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EigaMeisterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C218D629C338D40066A0D0 /* EigaMeisterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EigaMeisterUITests.swift; sourceTree = "<group>"; };
 		26C218D829C338D40066A0D0 /* EigaMeisterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EigaMeisterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		26C218E529C339C10066A0D0 /* TMDbAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDbAPI.swift; sourceTree = "<group>"; };
+		26C218E729C339F10066A0D0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		26C218E929C33A0C0066A0D0 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,9 @@
 				26C218BD29C338D30066A0D0 /* ContentView.swift */,
 				26C218BF29C338D40066A0D0 /* Assets.xcassets */,
 				26C218C129C338D40066A0D0 /* Preview Content */,
+				26C218E529C339C10066A0D0 /* TMDbAPI.swift */,
+				26C218E729C339F10066A0D0 /* Movie.swift */,
+				26C218E929C33A0C0066A0D0 /* MovieListView.swift */,
 			);
 			path = EigaMeister;
 			sourceTree = "<group>";
@@ -259,6 +268,9 @@
 			files = (
 				26C218BE29C338D30066A0D0 /* ContentView.swift in Sources */,
 				26C218BC29C338D30066A0D0 /* EigaMeisterApp.swift in Sources */,
+				26C218EA29C33A0C0066A0D0 /* MovieListView.swift in Sources */,
+				26C218E829C339F10066A0D0 /* Movie.swift in Sources */,
+				26C218E629C339C10066A0D0 /* TMDbAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
