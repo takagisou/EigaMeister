@@ -16,6 +16,8 @@ struct TMDbAPI {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                
                 do {
                     let movieResponse = try decoder.decode(MovieResponse.self, from: data)
                     DispatchQueue.main.async {
