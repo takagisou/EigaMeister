@@ -44,4 +44,36 @@ struct TMDbAPI {
             }
         }.resume()
     }
+    
+    func fetchMovieDetails(movieId: Int, completion: @escaping (Result<MovieDetails, Error>) -> Void) {
+        let movieDetailsURL = "\(baseURL)/movie/\(movieId)?api_key=\(apiKey)"
+
+        guard let url = URL(string: movieDetailsURL) else {
+            print("Invalid URL")
+            return
+        }
+
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+
+                do {
+                    let movieDetails = try decoder.decode(MovieDetails.self, from: data)
+                    DispatchQueue.main.async {
+                        completion(.success(movieDetails))
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        completion(.failure(error))
+                    }
+                }
+            } else if let error = error {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }.resume()
+    }
 }

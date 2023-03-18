@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		26A1D33E29C617050048568C /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26A1D33D29C617050048568C /* Config.plist */; };
+		26A1D34129C61A5B0048568C /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1D34029C61A5B0048568C /* MovieDetailView.swift */; };
+		26A1D34429C61A970048568C /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1D34329C61A970048568C /* MovieDetails.swift */; };
+		26A1D34729C61E2F0048568C /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1D34629C61E2F0048568C /* MovieListViewModel.swift */; };
+		26A1D34929C61F760048568C /* MovieRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1D34829C61F760048568C /* MovieRow.swift */; };
 		26C218BC29C338D30066A0D0 /* EigaMeisterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C218BB29C338D30066A0D0 /* EigaMeisterApp.swift */; };
 		26C218BE29C338D30066A0D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C218BD29C338D30066A0D0 /* ContentView.swift */; };
 		26C218C029C338D40066A0D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C218BF29C338D40066A0D0 /* Assets.xcassets */; };
@@ -39,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		26A1D33D29C617050048568C /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		26A1D34029C61A5B0048568C /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		26A1D34329C61A970048568C /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		26A1D34629C61E2F0048568C /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
+		26A1D34829C61F760048568C /* MovieRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRow.swift; sourceTree = "<group>"; };
 		26C218B829C338D30066A0D0 /* EigaMeister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EigaMeister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C218BB29C338D30066A0D0 /* EigaMeisterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EigaMeisterApp.swift; sourceTree = "<group>"; };
 		26C218BD29C338D30066A0D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +87,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26A1D33F29C61A410048568C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26C218BD29C338D30066A0D0 /* ContentView.swift */,
+				26C218E929C33A0C0066A0D0 /* MovieListView.swift */,
+				26A1D34029C61A5B0048568C /* MovieDetailView.swift */,
+				26A1D34829C61F760048568C /* MovieRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		26A1D34229C61A870048568C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26C218E729C339F10066A0D0 /* Movie.swift */,
+				26A1D34329C61A970048568C /* MovieDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		26A1D34529C61E210048568C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				26A1D34629C61E2F0048568C /* MovieListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		26C218AF29C338D30066A0D0 = {
 			isa = PBXGroup;
 			children = (
@@ -102,13 +138,13 @@
 		26C218BA29C338D30066A0D0 /* EigaMeister */ = {
 			isa = PBXGroup;
 			children = (
+				26A1D34529C61E210048568C /* ViewModel */,
+				26A1D34229C61A870048568C /* Model */,
+				26A1D33F29C61A410048568C /* View */,
 				26C218BB29C338D30066A0D0 /* EigaMeisterApp.swift */,
-				26C218BD29C338D30066A0D0 /* ContentView.swift */,
 				26C218BF29C338D40066A0D0 /* Assets.xcassets */,
 				26C218C129C338D40066A0D0 /* Preview Content */,
 				26C218E529C339C10066A0D0 /* TMDbAPI.swift */,
-				26C218E729C339F10066A0D0 /* Movie.swift */,
-				26C218E929C33A0C0066A0D0 /* MovieListView.swift */,
 				26A1D33D29C617050048568C /* Config.plist */,
 			);
 			path = EigaMeister;
@@ -270,10 +306,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A1D34129C61A5B0048568C /* MovieDetailView.swift in Sources */,
+				26A1D34429C61A970048568C /* MovieDetails.swift in Sources */,
 				26C218BE29C338D30066A0D0 /* ContentView.swift in Sources */,
+				26A1D34729C61E2F0048568C /* MovieListViewModel.swift in Sources */,
 				26C218BC29C338D30066A0D0 /* EigaMeisterApp.swift in Sources */,
 				26C218EA29C33A0C0066A0D0 /* MovieListView.swift in Sources */,
 				26C218E829C339F10066A0D0 /* Movie.swift in Sources */,
+				26A1D34929C61F760048568C /* MovieRow.swift in Sources */,
 				26C218E629C339C10066A0D0 /* TMDbAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
