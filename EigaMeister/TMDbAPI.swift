@@ -1,7 +1,16 @@
 import Foundation
 
 struct TMDbAPI {
-    private let apiKey = "YOUR_TMDB_API_KEY"
+    private let apiKey: String = {
+         if let filePath = Bundle.main.path(forResource: "Config", ofType: "plist"),
+            let plist = NSDictionary(contentsOfFile: filePath),
+            let apiKey = plist["TMDB_API_KEY"] as? String {
+             return apiKey
+         } else {
+             fatalError("Failed to load API key from Config.plist.")
+         }
+     }()
+    
     private let baseURL = "https://api.themoviedb.org/3"
     
     func fetchMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
