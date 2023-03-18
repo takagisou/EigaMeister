@@ -3,6 +3,7 @@ import SwiftUI
 struct MovieListView: View {
     
     @ObservedObject private var viewModel = MovieListViewModel()
+    private let tmdbAPI = TMDbAPI()
     
     var body: some View {
         NavigationView {
@@ -10,19 +11,16 @@ struct MovieListView: View {
                 if let movies = viewModel.movies {
                     List {
                         ForEach(movies) { movie in
-                            NavigationLink(
-                                destination: MovieDetailView(movie: movie),
-                                label: {
-                                    MovieRow(movie: movie)
-                                }
-                            )
+                            NavigationLink(destination: MovieDetailView(movie: movie)) {
+                                MovieRow(movie: movie, tmdbAPI: tmdbAPI)
+                            }
                         }
                     }
+                    .navigationTitle("映画一覧")
                 } else {
                     Text("Loading movies...")
                 }
             }
-            .navigationTitle("Movies")
             .onAppear(perform: viewModel.fetchMovies)
         }
     }

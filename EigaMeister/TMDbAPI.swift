@@ -12,6 +12,7 @@ struct TMDbAPI {
      }()
     
     private let baseURL = "https://api.themoviedb.org/3"
+    private let imageURLBase = "https://image.tmdb.org/t/p/w500"
     
     func fetchMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
         let discoverURL = "\(baseURL)/discover/movie?api_key=\(apiKey)"
@@ -75,5 +76,9 @@ struct TMDbAPI {
                 }
             }
         }.resume()
+    }
+    
+    func imageURL(for path: String) -> URL? {
+        return URL(string: imageURLBase + path)
     }
 }
