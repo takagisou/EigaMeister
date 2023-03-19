@@ -2,6 +2,24 @@
 
 🤖「ハイ、ショウチシマシタ。」
 
+# setup
+
+ビルドするには`./EigaMeister`に`Config.plist`を追加してTMDbのAPIキーを入力して下さい。
+
+#### ./EigaMeister/Config.plist
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TMDB_API_KEY</key>
+	<string>{API_KEY}</string>
+</dict>
+</plist>
+
+```
+
+
 # UI
 
 ## 初期
