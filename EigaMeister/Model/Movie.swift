@@ -4,16 +4,16 @@ struct Movie: Codable, Identifiable {
     let id: Int
     let title: String
     let overview: String
-    let releaseDate: String
     let posterPath: String?
+    let backdropPath: String?
+    let releaseDate: String
     let voteAverage: Double
 
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case title
-        case overview
-        case releaseDate = "release_date"
+    enum CodingKeys: String, CodingKey {
+        case id, title, overview
         case posterPath = "poster_path"
+        case backdropPath = "backdrop_path"
+        case releaseDate = "release_date"
         case voteAverage = "vote_average"
     }
 }
