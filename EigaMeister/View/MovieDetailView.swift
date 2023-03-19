@@ -7,27 +7,35 @@ struct MovieDetailView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 10) {
-                Text(movie.title)
-                    .font(.largeTitle)
-                    .bold()
-                    .padding(.top)
-                
-                if let movieDetails = movieDetails {
-                    Text("Overview")
-                        .font(.headline)
-                    Text(movieDetails.overview)
-                    
-                    Text("Release Date")
-                        .font(.headline)
-                    Text(movieDetails.releaseDate)
-                    
-                    Text("Runtime")
-                        .font(.headline)
-                    Text("\(movieDetails.runtime) minutes")
+            VStack(alignment: .leading, spacing: 20) {
+                if let posterPath = movie.posterPath, let imageURL = tmdbAPI.imageURL(for: posterPath) {
+                    AsyncImage(url: imageURL) { image in
+                        image.resizable()
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width: 200, height: 300)
+                    .cornerRadius(10)
                 }
-            }.padding()
-        }.onAppear(perform: loadMovieDetails)
+
+                Text("リリース日: \(movie.releaseDate ?? "不明")")
+                    .font(.headline)
+
+                Text("評価: \(movie.voteAverage, specifier: "%.1f")")
+                    .font(.headline)
+
+                Text("概要")
+                    .font(.title2)
+                    .bold()
+
+                Text(movie.overview)
+                    .font(.body)
+
+                Spacer()
+            }
+            .padding()
+        }
+        .navigationTitle(movie.title)
     }
 
     private func loadMovieDetails() {
