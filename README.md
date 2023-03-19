@@ -38,7 +38,7 @@
 動画
 
 <kbd>
-<img src="./assets/list_detail.gif" width="320" />
+<img src="./assets/list_to_detail.gif" width="320" />
 </kbd>
 
 ## 後期
